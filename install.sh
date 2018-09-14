@@ -10,7 +10,7 @@ uninstall_emojionepicker(){
 	rm -f $_AUTOSTART_DIR/emojione-picker_autostart.desktop
 	rm -rf $_INSTALL_PREFIX/share/emojione-picker
     # Remove desktop entry
-    rm -f $_APP_DIR/emojione-picker.desktop 
+    rm -f $_APP_DIR/emojione-picker.desktop
 	# Uninstall iconsa
 	for SIZE in 16 22 24 32 48 64 ; do
 		xdg-icon-resource uninstall --theme ubuntu-mono-dark --size ${SIZE} emojione-picker
@@ -55,9 +55,10 @@ else
 fi
 
 if [ -f "$_INSTALL_PREFIX/bin/emojione-picker" ] ; then
-	read -p "Installation detected. Press enter to uninstall or Ctrl-C to abort"
-	uninstall_emojionepicker
-	echo "Uninstall completed."
+	echo "Installation detected."
+	# read -p "Installation detected. Press enter to uninstall or Ctrl-C to abort"
+	# uninstall_emojionepicker
+	# echo "Uninstall completed."
 else
 	read -p "Press enter to install emojione-picker or Ctrl-C to abort"
 	install_emojionepicker
